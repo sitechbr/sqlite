@@ -1,0 +1,80 @@
+create table ASSETS 
+    (id NUMBER(5) not null, 
+    name VARCHAR2(50),
+    serial_number VARCHAR2(100),
+    CPU NUMBER(4),
+    memory NUMBER(6),
+    HDD NUMBER(20)
+
+    
+    );
+
+
+create table USERS 
+    (id NUMBER(5) not null,
+    login VARCHAR2(20),
+    lastname VARCHAR2(20),
+    firstname VARCHAR2(20),
+    birth DATE,
+    asset_id NUMBER(5)
+   
+    
+    );
+
+
+
+create table SOFT 
+    (id NUMBER(5) not null,
+    name VARCHAR2(20),
+    version VARCHAR2(20),
+    type VARCHAR2(20),
+    asset_id NUMBER(5)
+   
+    
+    );
+
+
+
+
+insert into ASSETS (id, name , serial_number, CPU ,memory , HDD)
+values (1, 'cit-ws0022', '2304040', 4,8000, 256);
+insert into ASSETS (id, name , serial_number, CPU ,memory , HDD)
+values (2, 'cit-ws0023', '2304041', 2,4000, 512);
+insert into ASSETS (id, name , serial_number, CPU ,memory , HDD)
+values (3, 'cit-ws0024', '2304042', 6,16000, 1024);
+insert into ASSETS (id, name , serial_number, CPU ,memory , HDD)
+values (4, 'cit-ws0025', '2304043', 8,8000, 256);
+
+
+insert into USERS  (id,login,lastname,firstname,birth,asset_id)
+values (1, 'nva001', 'Нестеров','Василий', to_date('05-11-1992','dd-mm-yyyy'),1);
+insert into USERS  (id,login,lastname,firstname,birth,asset_id)
+values (2, 'nva001', 'Ленин','Илья', to_date('05-11-1992','dd-mm-yyyy'),2);
+insert into USERS  (id,login,lastname,firstname,birth,asset_id)
+values (3, 'nra001', 'Мартов','Олег', to_date('05-11-1994','dd-mm-yyyy'),2);
+insert into USERS  (id,login,lastname,firstname,birth,asset_id)
+values (4, 'nta001', 'Петров','Василий', to_date('05-11-1991','dd-mm-yyyy'),2);
+
+
+insert into SOFT (id,name,version,type,asset_id)
+values (1, 'Batlefield', '4','Game',1);
+insert into SOFT (id,name,version,type,asset_id)
+values (2, 'Office', '4','SOFT',1);
+insert into SOFT (id,name,version,type,asset_id)
+values (3, 'Calculator', '4','SOFT',2);
+insert into SOFT (id,name,version,type,asset_id)
+values (4, 'CAD', '4','SOFT',1);
+insert into SOFT (id,name,version,type,asset_id)
+values (5, 'CS', '4','Game',1);
+insert into SOFT (id,name,version,type,asset_id)
+values (6, 'IDE', '4','SOFT',3);
+insert into SOFT (id,name,version,type,asset_id)
+values (7, 'Heroes', '4','Game',1);
+
+
+
+select * from assets inner join users on users.asset_id = assets.id where assets.name = 'cit-ws0022';
+
+
+
+https://www.youtube.com/watch?v=HMU1FjM8RZA&list=PLzWwGdxbQMSMO3ye2D73tYoLPQLB2J3KY&index=71

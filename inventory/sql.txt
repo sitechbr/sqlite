@@ -46,14 +46,16 @@ insert into ASSETS (id, name , serial_number, CPU ,memory , HDD)
 values (4, 'cit-ws0025', '2304043', 8,8000, 256);
 
 
+
 insert into USERS  (id,login,lastname,firstname,birth,asset_id)
-values (1, 'nva001', 'Нестеров','Василий', to_date('05-11-1992','dd-mm-yyyy'),1);
+values (1, 'nva001', 'Нестеров','Василий', 19921005,1);
 insert into USERS  (id,login,lastname,firstname,birth,asset_id)
-values (2, 'nva001', 'Ленин','Илья', to_date('05-11-1992','dd-mm-yyyy'),2);
+values (2, 'nva001', 'Ленин','Илья', 19921005,2);
 insert into USERS  (id,login,lastname,firstname,birth,asset_id)
-values (3, 'nra001', 'Мартов','Олег', to_date('05-11-1994','dd-mm-yyyy'),2);
+values (3, 'nra001', 'Мартов','Олег', 19921005,2);
 insert into USERS  (id,login,lastname,firstname,birth,asset_id)
-values (4, 'nta001', 'Петров','Василий', to_date('05-11-1991','dd-mm-yyyy'),2);
+values (4, 'nta001', 'Петров','Василий', 19921005,2);
+
 
 
 insert into SOFT (id,name,version,type,asset_id)
